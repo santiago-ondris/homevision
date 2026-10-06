@@ -1,0 +1,19 @@
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+src = ["app", "vision"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "N"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "vision"]
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+files = ["app", "vision"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
