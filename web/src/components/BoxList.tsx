@@ -42,9 +42,16 @@ export default function BoxList({ boxes, interaction, selection }: Props) {
             onBlur={() => interaction.onHighlight(null, "keyboard")}
             onClick={() => interaction.onSelect(index, "row")}
           >
-            <span>{index + 1}</span>
-            <span>{box.is_checked ? "checked" : "empty"}</span>
-            <span>[{box.bbox.join(", ")}]</span>
+            <span className="box-number">
+              <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <span className="live-region">{index + 1}</span>
+            </span>
+            <span
+              aria-hidden="true"
+              className={`state-marker ${box.is_checked ? "checked" : "empty"}`}
+            />
+            <span className="box-state">{box.is_checked ? "checked" : "empty"}</span>
+            <span className="box-coordinates">[{box.bbox.join(", ")}]</span>
           </button>
         );
       })}

@@ -1,10 +1,11 @@
 import { useRef } from "react";
 
-import { idleHint, summary } from "../lib/format";
 import type { State, Tab } from "../lib/state";
 import type { BoxInteraction } from "./BoxOverlay";
 import BoxList from "./BoxList";
 import JsonView from "./JsonView";
+import Footer from "./Footer";
+import Readout from "./Readout";
 
 interface Props {
   state: State;
@@ -17,30 +18,30 @@ interface Props {
 export default function Inspector({ state, interaction, onTab, onChoose, onCopy }: Props) {
   const boxesTab = useRef<HTMLButtonElement>(null);
   const jsonTab = useRef<HTMLButtonElement>(null);
-  if (state.status === "idle")
-    return (
-      <aside className="inspector idle-inspector">
-        <p>{idleHint}</p>
-      </aside>
-    );
+  if (state.status === "idle") return null;
   if (state.status === "loading")
     return (
       <aside className="inspector">
-        <p>Detecting…</p>
+        <p className="inspector-message">Detecting…</p>
+        <Footer />
       </aside>
     );
   if (state.status === "error") {
     return (
       <aside className="inspector">
-        <p>{state.message}</p>
-        {state.requestId && (
-          <p>
-            Request ID: <code>{state.requestId}</code>
-          </p>
-        )}
-        <button type="button" onClick={onChoose}>
-          Try another image
-        </button>
+        <div className="error-block">
+          <p className="error-label">Error</p>
+          <p>{state.message}</p>
+          {state.requestId && (
+            <p className="request-id">
+              <span className="request-label">Request ID</span>: <code>{state.requestId}</code>
+            </p>
+          )}
+          <button type="button" onClick={onChoose}>
+            Try another image
+          </button>
+        </div>
+        <Footer />
       </aside>
     );
   }
@@ -58,9 +59,10 @@ export default function Inspector({ state, interaction, onTab, onChoose, onCopy 
 
   return (
     <aside className="inspector">
-      <p>{summary(state.result.boxes, state.result.durationMs)}</p>
+      <Readout boxes={state.result.boxes} durationMs={state.result.durationMs} />
       <div
         role="tablist"
+        className="inspector-tabs"
         aria-label="Detection results"
         onKeyDown={(event) => {
           if (moveTab(event.key)) event.preventDefault();
@@ -124,6 +126,7 @@ export default function Inspector({ state, interaction, onTab, onChoose, onCopy 
           />
         )}
       </div>
+      <Footer />
     </aside>
   );
 }

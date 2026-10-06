@@ -134,6 +134,7 @@ export default function App() {
       }}
     >
       <Header
+        idle={state.status === "idle"}
         onChoose={openFilePicker}
         onSample={(sample) => {
           void chooseSample(sample);
@@ -153,8 +154,9 @@ export default function App() {
       <div className="live-region" aria-live="polite" aria-atomic="true">
         {announcement}
       </div>
-      <main>
+      <main className={state.status === "idle" ? "idle-layout" : undefined}>
         <DocumentViewer
+          idle={state.status === "idle"}
           image={state.image}
           boxes={state.status === "success" ? state.result.boxes : []}
           loading={state.status === "loading"}

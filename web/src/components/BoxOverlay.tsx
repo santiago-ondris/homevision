@@ -16,6 +16,8 @@ interface Props {
   interaction: BoxInteraction;
 }
 
+const outlineOffset = 2;
+
 export default function BoxOverlay({ boxes, width, height, interaction }: Props) {
   return (
     <svg
@@ -30,10 +32,10 @@ export default function BoxOverlay({ boxes, width, height, interaction }: Props)
           <rect
             key={index}
             data-box-index={index}
-            x={x1}
-            y={y1}
-            width={x2 - x1}
-            height={y2 - y1}
+            x={x1 - outlineOffset}
+            y={y1 - outlineOffset}
+            width={x2 - x1 + outlineOffset * 2}
+            height={y2 - y1 + outlineOffset * 2}
             vectorEffect="non-scaling-stroke"
             className={`box ${box.is_checked ? "checked" : "empty"}${highlighted ? " highlighted" : ""}${interaction.selected === index ? " selected" : ""}`}
             tabIndex={0}
