@@ -2,12 +2,15 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log/slog"
-	"net/http"
 	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/santiago-ondris/homevision/api/internal/config"
+	"github.com/santiago-ondris/homevision/api/internal/detector"
 	"github.com/santiago-ondris/homevision/api/internal/httpapi"
 )
 
@@ -20,17 +23,32 @@ func main() {
 }
 
 func run(logger *slog.Logger) error {
-	port, err := config.LoadPort()
+	settings, err := config.Load()
 	if err != nil {
 		return fmt.Errorf("loading configuration: %w", err)
 	}
-	server := &http.Server{
-		Addr:    fmt.Sprintf(":%d", port),
-		Handler: httpapi.NewRouter(logger),
-	}
-	logger.Info("server listening", "port", port)
-	if err := server.ListenAndServe(); err != nil {
-		return fmt.Errorf("serving HTTP: %w", err)
-	}
-	return nil
+	client := detector.New(settings.WorkerURL, settings.WorkerTimeout)
+	server := httpapi.NewServer(settings, httpapi.NewRouter(settings, client, logger))
+	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer stop()
+	logger.Info(
+		"server starting",
+		"port",
+		settings.Port,
+		"max_upload_bytes",
+		settings.MaxUploadBytes,
+		"max_image_side",
+		settings.MaxImageSide,
+		"max_image_pixels",
+		settings.MaxImagePixels,
+		"worker_url",
+		settings.WorkerURL,
+		"worker_timeout",
+		settings.WorkerTimeout.String(),
+		"max_in_flight",
+		settings.MaxInFlight,
+		"allowed_origins",
+		settings.AllowedOrigins,
+	)
+	return httpapi.Serve(ctx, server, logger)
 }
