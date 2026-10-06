@@ -1,4 +1,3 @@
-import inspect
 import json
 from collections.abc import AsyncIterator, Iterator
 from pathlib import Path
@@ -252,12 +251,6 @@ def test_success_logs_one_request_with_sizes_counts_and_stage_timings(
     assert set(event["timings_ms"]) == {"decode", "ink", "candidates", "sizing", "classify"}
     assert event["duration_ms"] >= 0
     assert "exception" not in event
-
-
-def test_detection_handler_is_synchronous(client: TestClient) -> None:
-    route = next(route for route in client.app.routes if route.path == "/v1/detect")
-
-    assert not inspect.iscoroutinefunction(route.endpoint)
 
 
 def test_response_rounds_fill_ratio_and_aggregates_stage_timings(

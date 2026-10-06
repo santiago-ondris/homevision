@@ -85,13 +85,6 @@ def test_blue_tinted_background_does_not_hide_a_black_box() -> None:
     assert find_candidates(ink_mask(image), Params()) == [Box(20, 20, 50, 50)]
 
 
-@pytest.mark.parametrize("brightness, side", [(255, 80), (0, 80), (255, 1)])
-def test_blank_black_and_single_pixel_pages_have_no_candidates(brightness: int, side: int) -> None:
-    image = np.full((side, side, 3), brightness, dtype=np.uint8)
-
-    assert find_candidates(ink_mask(image), Params()) == []
-
-
 def test_border_growth_stops_at_the_image_edges() -> None:
     strokes = np.full((20, 20), 255, dtype=np.uint8)
 

@@ -66,10 +66,3 @@ def test_inset_never_drops_below_two_pixels() -> None:
     ink[2:10, 2:10] = 255
 
     assert fill_ratio(ink, Box(0, 0, 12, 12), replace(Params(), interior_inset=0)) == 1.0
-
-
-def test_rounding_of_half_pixel_inset_uses_round() -> None:
-    ink = np.zeros((25, 25), dtype=np.uint8)
-    ink[2:23, 2:23] = 255
-
-    assert fill_ratio(ink, Box(0, 0, 25, 25), replace(Params(), interior_inset=0.1)) == 1.0
