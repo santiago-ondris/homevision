@@ -1,7 +1,7 @@
 import logging
 import sys
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 
 from app.config import validate_environment
 from app.logging import configure_logging
@@ -17,10 +17,7 @@ def create_app() -> FastAPI:
     app = FastAPI()
 
     @app.get("/healthz")
-    def health(request: Request) -> dict[str, str]:
-        logging.getLogger(__name__).info(
-            "health check", extra={"request_id": request.headers.get("X-Request-Id", "")}
-        )
+    def health() -> dict[str, str]:
         return {"status": "ok"}
 
     return app
