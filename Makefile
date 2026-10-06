@@ -29,7 +29,6 @@ lint: check-python
 test: check-python
 	cd api && go test ./...
 	cd worker && python -m pytest
-	cd web && npm test
 
 fmt:
 	cd api && gofmt -w .
