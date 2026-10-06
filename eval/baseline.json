@@ -1,0 +1,6 @@
+{
+  "sample1.png": {"matched": 118, "label_correct": 118, "false_detections": 1},
+  "sample2.jpg": {"matched": 41, "label_correct": 40, "false_detections": 0},
+  "sample3.png": {"matched": 48, "label_correct": 48, "false_detections": 0},
+  "sample4.png": {"matched": 78, "label_correct": 78, "false_detections": 0}
+}
