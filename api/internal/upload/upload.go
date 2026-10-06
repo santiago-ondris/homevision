@@ -78,6 +78,7 @@ func Read(resp http.ResponseWriter, req *http.Request, limits Limits) (Image, er
 		return Image{}, err
 	}
 	req.Body = http.MaxBytesReader(resp, req.Body, addAllowance(limits.MaxBytes, multipartAllowance))
+	// TODO(prod): store uploads in object storage so documents can outlive the request body.
 	data, err := readMultipart(req, limits.MaxBytes)
 	if err != nil {
 		return Image{}, err

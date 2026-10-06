@@ -103,6 +103,7 @@ def detect_image(
     decode_ms = (perf_counter() - started) * MILLISECONDS_PER_SECOND
     request.state.metrics.update(width=image.shape[1], height=image.shape[0])
     request.state.metrics["timings_ms"]["decode"] = decode_ms
+    # TODO(prod): autoscale workers on CPU usage to absorb sustained detection load.
     result = detect(image, params)
     request.state.metrics.update(
         boxes=len(result.boxes), timings_ms={"decode": decode_ms, **result.timings_ms}

@@ -21,6 +21,8 @@ services:
       dockerfile: api/Dockerfile
     environment:
       PORT: "8080"
+      WORKER_URL: "http://worker:8000"
+      ALLOWED_ORIGINS: "http://localhost:5173"
     ports:
       - "8080:8080"
     depends_on:

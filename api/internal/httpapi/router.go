@@ -35,6 +35,7 @@ func NewRouter(settings config.Config, service Detector, logger *slog.Logger) ht
 		slots:    make(chan struct{}, settings.MaxInFlight),
 	}
 	router := http.NewServeMux()
+	// TODO(prod): authenticate clients and limit requests per client to prevent one caller exhausting capacity.
 	router.HandleFunc("POST /detect", server.detect)
 	router.HandleFunc("OPTIONS /detect", func(resp http.ResponseWriter, _ *http.Request) {
 		resp.WriteHeader(http.StatusNoContent)
@@ -118,6 +119,7 @@ func (server *api) detect(resp http.ResponseWriter, req *http.Request) {
 }
 
 func (server *api) detectImage(resp http.ResponseWriter, req *http.Request, picture upload.Image) {
+	// TODO(prod): queue batch documents between API and worker so processing can outlive HTTP requests.
 	ctx, cancel := context.WithTimeout(req.Context(), server.settings.WorkerTimeout)
 	defer cancel()
 	workerStarted := time.Now()

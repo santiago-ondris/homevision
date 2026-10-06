@@ -114,6 +114,7 @@ func (server *api) accessLog(next http.Handler) http.Handler {
 }
 
 func (server *api) logAccess(req *http.Request) {
+	// TODO(prod): add metrics and tracing to track latency and failures across API and worker calls.
 	record := observation(req)
 	if req.Context().Err() != nil {
 		record.status = clientClosedStatus
