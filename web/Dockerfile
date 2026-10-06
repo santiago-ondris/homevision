@@ -3,6 +3,7 @@ WORKDIR /web
 COPY web/package.json web/package-lock.json ./
 RUN npm ci
 COPY web/ ./
+COPY samples/ /samples/
 RUN npm run build
 
 FROM nginx:alpine

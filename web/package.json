@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/copy-samples.mjs",
     "dev": "vite --host 0.0.0.0",
+    "prebuild": "node scripts/copy-samples.mjs",
     "build": "tsc --noEmit && vite build",
     "lint": "prettier --check . && eslint . && tsc --noEmit",
     "fmt": "prettier --write ."
