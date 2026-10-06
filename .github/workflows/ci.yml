@@ -34,3 +34,7 @@ jobs:
           make lint
           make test
           cd web && npm run build
+      - name: Check detection baseline
+        run: |
+          docker compose build eval
+          docker compose run --rm eval python -m eval.evaluate --set samples --check

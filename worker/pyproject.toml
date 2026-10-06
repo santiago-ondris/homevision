@@ -7,7 +7,7 @@ src = ["app", "vision"]
 select = ["E", "F", "I", "B", "UP", "SIM", "N"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["app", "vision"]
+known-first-party = ["app", "vision", "eval"]
 
 [tool.mypy]
 python_version = "3.14"
@@ -16,4 +16,4 @@ files = ["app", "vision"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]
+pythonpath = [".", ".."]

@@ -37,4 +37,7 @@ services:
       context: .
       dockerfile: worker/Dockerfile
     profiles: ["tools"]
-    command: ["python", "-c", "print('not implemented')"]
+    volumes:
+      - ./samples:/worker/samples:ro
+      - ./eval:/worker/eval:ro
+    command: ["python", "-m", "eval.evaluate", "--set", "all"]
