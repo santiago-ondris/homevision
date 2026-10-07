@@ -1,0 +1,315 @@
+{
+  "image": "urla_demographic.png",
+  "boxes": [
+    {
+      "bbox": [
+        601,
+        428,
+        635,
+        462
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        601,
+        474,
+        635,
+        508
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        601,
+        520,
+        635,
+        554
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        601,
+        566,
+        635,
+        600
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1305,
+        1489,
+        1339,
+        1523
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1355,
+        1717,
+        1388,
+        1750
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1646,
+        1676,
+        1680,
+        1709
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1707,
+        1910,
+        1740,
+        1944
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1355,
+        1910,
+        1388,
+        1944
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1305,
+        1584,
+        1339,
+        1617
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1355,
+        1676,
+        1388,
+        1709
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1355,
+        1630,
+        1388,
+        1663
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1646,
+        1630,
+        1680,
+        1663
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1893,
+        1630,
+        1927,
+        1663
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1893,
+        1676,
+        1927,
+        1709
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1305,
+        1816,
+        1339,
+        1850
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1305,
+        1865,
+        1339,
+        1899
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1355,
+        1958,
+        1388,
+        1992
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1305,
+        2158,
+        1339,
+        2192
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1305,
+        2105,
+        1339,
+        2139
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        445,
+        1539,
+        479,
+        1572
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        755,
+        1539,
+        788,
+        1572
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        150,
+        1491,
+        183,
+        1525
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        205,
+        1539,
+        238,
+        1572
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        150,
+        1841,
+        183,
+        1875
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        150,
+        1987,
+        183,
+        2021
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        150,
+        2037,
+        183,
+        2071
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        205,
+        1585,
+        238,
+        1618
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        150,
+        1787,
+        183,
+        1821
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        150,
+        2087,
+        183,
+        2121
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        2198,
+        1910,
+        2232,
+        1944
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    }
+  ]
+}

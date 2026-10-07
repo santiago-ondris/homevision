@@ -1,0 +1,445 @@
+{
+  "image": "irs_ss4.png",
+  "boxes": [
+    {
+      "bbox": [
+        1062,
+        1005,
+        1098,
+        1041
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1242,
+        1005,
+        1278,
+        1041
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1257,
+        288,
+        1293
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1457,
+        288,
+        1493
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1392,
+        1157,
+        1428,
+        1193
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1392,
+        1307,
+        1428,
+        1343
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1842,
+        1407,
+        1878,
+        1443
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1857,
+        288,
+        1893
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1332,
+        2357,
+        1368,
+        2393
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1332,
+        2407,
+        1368,
+        2443
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        2457,
+        288,
+        2493
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1662,
+        2607,
+        1698,
+        2643
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        2052,
+        1057,
+        2088,
+        1093
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        2262,
+        1057,
+        2298,
+        1093
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1407,
+        288,
+        1443
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1357,
+        288,
+        1393
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1207,
+        288,
+        1243
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1157,
+        288,
+        1193
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1392,
+        1207,
+        1428,
+        1243
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1392,
+        1257,
+        1428,
+        1293
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1392,
+        1357,
+        1428,
+        1393
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1392,
+        1407,
+        1428,
+        1443
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1307,
+        288,
+        1343
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1842,
+        1357,
+        1878,
+        1393
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1842,
+        1307,
+        1878,
+        1343
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1811,
+        288,
+        1847
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1761,
+        288,
+        1797
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        1657,
+        288,
+        1693
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1152,
+        1611,
+        1188,
+        1647
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1152,
+        1661,
+        1188,
+        1697
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1152,
+        1711,
+        1188,
+        1747
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1152,
+        1761,
+        1188,
+        1797
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1152,
+        1811,
+        1188,
+        1847
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        252,
+        2407,
+        288,
+        2443
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        522,
+        2407,
+        558,
+        2443
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        522,
+        2457,
+        558,
+        2493
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        852,
+        2407,
+        888,
+        2443
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        852,
+        2457,
+        888,
+        2493
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1332,
+        2457,
+        1368,
+        2493
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1482,
+        2607,
+        1518,
+        2643
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1872,
+        2357,
+        1908,
+        2393
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1872,
+        2407,
+        1908,
+        2443
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        2347,
+        2207,
+        2383,
+        2243
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        2232,
+        2407,
+        2268,
+        2443
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "image": "urla_borrower.jpg",
+  "boxes": [
+    {
+      "bbox": [
+        636,
+        947,
+        653,
+        965
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        586,
+        1356,
+        603,
+        1373
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        487,
+        1064,
+        504,
+        1081
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        77,
+        1428,
+        94,
+        1445
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        597,
+        1189,
+        614,
+        1206
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    }
+  ]
+}
