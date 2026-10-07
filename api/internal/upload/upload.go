@@ -13,6 +13,7 @@ import (
 	"net/http"
 )
 
+// Room for multipart boundaries, part headers and ignored fields on top of the file limit.
 const multipartAllowance int64 = 1 << 20
 
 // Limits bounds the uploaded bytes and header dimensions.

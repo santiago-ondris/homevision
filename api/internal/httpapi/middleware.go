@@ -14,7 +14,8 @@ import (
 )
 
 const (
-	requestIDPattern   = `^[A-Za-z0-9_-]{1,64}$`
+	requestIDPattern = `^[A-Za-z0-9_-]{1,64}$`
+	// nginx's status for a client that closed the connection; HTTP defines none.
 	clientClosedStatus = 499
 )
 

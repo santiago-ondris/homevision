@@ -81,6 +81,7 @@ func New(baseURL string, timeout time.Duration) *Client {
 		baseURL: strings.TrimRight(baseURL, "/"),
 		httpClient: &http.Client{
 			Transport: transport,
+			// The worker never redirects; a 3xx means WORKER_URL points somewhere else.
 			CheckRedirect: func(*http.Request, []*http.Request) error {
 				return http.ErrUseLastResponse
 			},
@@ -101,7 +102,7 @@ func (client *Client) Detect(ctx context.Context, picture upload.Image) (Result,
 	}
 	req.Header.Set("Content-Type", picture.Format)
 	req.Header.Set("X-Request-Id", requestid.RequestID(ctx))
-	// TODO(prod): retry once on connection errors; the call is idempotent
+	// TODO(prod): retry once on connection errors; the call is idempotent.
 	resp, err := client.httpClient.Do(req)
 	if err != nil {
 		return Result{}, callError(ctx, err)
@@ -120,7 +121,7 @@ func (client *Client) Detect(ctx context.Context, picture upload.Image) (Result,
 	return result, nil
 }
 
-// Ready checks worker health within two seconds.
+// Ready checks worker health within the readiness timeout.
 func (client *Client) Ready(ctx context.Context) error {
 	ctx, cancel := context.WithTimeout(ctx, readinessTimeout)
 	defer cancel()

@@ -44,6 +44,7 @@ def enclosed_regions(
         x, y, w, h = x + 1, y + 1, w - 2, h - 2
         if min(w, h) < MINIMUM_PAPER_SIDE:
             continue
+        # contourArea measures between pixel centres, so a full rectangle spans (w + 1) by (h + 1).
         if cv2.contourArea(contour) < params.rectangularity * (w + 1) * (h + 1):
             continue
         inner = Box(x, y, x + w, y + h)

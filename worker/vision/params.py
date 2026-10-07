@@ -4,7 +4,7 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class Params:
     # Shortest straight stroke kept, px; stable from 12 to 20 on samples, breaks below 12.
-    # TODO(prod): scale line_length with the typical box size in a second pass
+    # TODO(prod): scale line_length with the typical box size in a second pass.
     line_length: int = 12
     # Extension at each stroke end, px; closes corners of thin or grey borders.
     corner_gap: int = 2
