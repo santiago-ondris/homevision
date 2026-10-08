@@ -1,0 +1,85 @@
+{
+  "image": "irs_w9.png",
+  "boxes": [
+    {
+      "bbox": [
+        303,
+        750,
+        339,
+        786
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        303,
+        957,
+        339,
+        993
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1835,
+        1095,
+        1870,
+        1130
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        303,
+        805,
+        339,
+        841
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        749,
+        750,
+        785,
+        786
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1049,
+        750,
+        1085,
+        786
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1349,
+        750,
+        1385,
+        786
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1619,
+        750,
+        1655,
+        786
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    }
+  ]
+}
