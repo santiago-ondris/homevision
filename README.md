@@ -41,18 +41,30 @@ This sample returns 41 boxes; these are the first two.
 docker compose run --rm eval
 ```
 
-Compares the detector against 288 hand-annotated boxes across four sample images.
+Compares the detector against hand-annotated boxes in two sets: the four sample images, and seven pages from public forms that are not part of the challenge.
 
 ```
+set: samples   IoU >= 0.50   all boxes
 image          annotated  detected  matched  recall  precision  mean IoU    labels
 sample1.png          118       119      118  100.0%      99.2%      0.98   118/118
 sample2.jpg           43        41       41   95.3%     100.0%      0.98     40/41
 sample3.png           48        48       48  100.0%     100.0%      0.99     48/48
 sample4.png           79        78       78   98.7%     100.0%      0.98     78/78
 total                288       286      285   99.0%      99.7%      0.98   284/285
+
+set: holdout   IoU >= 0.50   all boxes
+image          annotated  detected  matched  recall  precision  mean IoU    labels
+irs_1040.png          53        53       53  100.0%     100.0%      0.98     53/53
+irs_ss4.png           44        44       44  100.0%     100.0%      1.00     44/44
+irs_w9.png             8         8        8  100.0%     100.0%      0.97       8/8
+urla_sec1.jpg          5         5        5  100.0%     100.0%      0.98       5/5
+urla_sec8.png         31        31       31  100.0%     100.0%      0.99     31/31
+uscis_i9.png           5         5        5  100.0%     100.0%      0.99       5/5
+va_26_1880.png        22        22       22  100.0%     100.0%      1.00     22/22
+total                168       168      168  100.0%     100.0%      0.99   168/168
 ```
 
-The parameters were tuned on these same images, so this is an upper bound, not a prediction for unseen forms. The command also lists every miss and wrong label.
+The parameters were tuned on the samples, and five of the holdout pages were used to correct them. Only `uscis_i9.png` and `va_26_1880.png` were run after the last change, so those 27 boxes are the result on unseen forms. [WRITEUP.md](WRITEUP.md) has the full account. The command also lists every miss and wrong label.
 
 ## Development
 
