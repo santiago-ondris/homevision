@@ -1,0 +1,225 @@
+{
+  "image": "va_26_1880.png",
+  "boxes": [
+    {
+      "bbox": [
+        136,
+        1282,
+        171,
+        1318
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        836,
+        1532,
+        871,
+        1568
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        136,
+        1332,
+        171,
+        1368
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        136,
+        1532,
+        171,
+        1568
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        136,
+        1582,
+        171,
+        1618
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        836,
+        1582,
+        871,
+        1618
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        136,
+        2582,
+        171,
+        2618
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        136,
+        2707,
+        171,
+        2743
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        136,
+        2757,
+        171,
+        2793
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        686,
+        2582,
+        721,
+        2618
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1111,
+        2582,
+        1146,
+        2618
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1086,
+        2707,
+        1121,
+        2743
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1086,
+        2757,
+        1121,
+        2793
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1711,
+        657,
+        1746,
+        693
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1711,
+        707,
+        1746,
+        743
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1536,
+        1532,
+        1571,
+        1568
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1536,
+        1582,
+        1571,
+        1618
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1586,
+        2582,
+        1621,
+        2618
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1511,
+        2932,
+        1546,
+        2968
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1511,
+        2982,
+        1546,
+        3018
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1511,
+        3032,
+        1546,
+        3068
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1511,
+        3082,
+        1546,
+        3118
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    }
+  ]
+}

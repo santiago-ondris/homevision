@@ -1,0 +1,55 @@
+{
+  "image": "uscis_i9.png",
+  "boxes": [
+    {
+      "bbox": [
+        757,
+        1080,
+        797,
+        1120
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        1114,
+        2647,
+        1154,
+        2687
+      ],
+      "is_checked": true,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        757,
+        1130,
+        797,
+        1170
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        757,
+        1180,
+        797,
+        1220
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    },
+    {
+      "bbox": [
+        757,
+        1230,
+        797,
+        1270
+      ],
+      "is_checked": false,
+      "ambiguous": false
+    }
+  ]
+}
