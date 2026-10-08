@@ -24,12 +24,20 @@ def test_ten_thirty_pixel_boxes_are_kept_and_three_fourteen_pixel_boxes_are_drop
     assert boxes == original
 
 
-def test_equal_size_group_counts_favour_the_first_input_candidate() -> None:
-    small = [Box(0, 0, 14, 14), Box(20, 0, 34, 14)]
-    large = [Box(0, 50, 30, 80), Box(40, 50, 70, 80)]
+def test_many_small_regions_lose_to_fewer_larger_boxes() -> None:
+    small = [Box(x, 0, x + 14, 15) for x in range(0, 100, 20)]
+    large = [Box(x, 50, x + 36, 86) for x in range(0, 120, 40)]
 
-    assert typical_size_filter(small + large, Params()) == small
-    assert typical_size_filter(large + small, Params()) == large
+    assert typical_size_filter(small + large, Params()) == large
+
+
+def test_equal_group_areas_favour_the_first_input_candidate() -> None:
+    first = Box(0, 0, 20, 20)
+    second = Box(30, 0, 50, 20)
+    wide = Box(60, 0, 100, 20)
+
+    assert typical_size_filter([first, second, wide], Params()) == [first, second]
+    assert typical_size_filter([wide, first, second], Params()) == [wide]
 
 
 def test_both_width_and_height_must_fall_within_the_relative_tolerance() -> None:
@@ -51,8 +59,8 @@ def test_relative_tolerance_is_measured_from_each_candidate() -> None:
 
 def test_tolerance_boundary_is_inclusive() -> None:
     base = Box(0, 0, 20, 20)
-    edge = Box(30, 0, 53, 23)
-    other = Box(60, 0, 100, 40)
+    edge = Box(30, 0, 47, 17)
+    other = Box(60, 0, 70, 10)
 
     assert typical_size_filter([base, edge, other], Params()) == [base, edge]
     assert typical_size_filter([base, edge, other], replace(Params(), size_tolerance=0)) == [base]
