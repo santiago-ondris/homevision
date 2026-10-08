@@ -12,14 +12,15 @@ class Params:
     rectangularity: float = 0.85
     # Maximum outward growth per side, px; thickest printed border seen is 4 px.
     max_border: int = 8
-    # Minimum outer box side, px.
-    min_side: int = 12
+    # Minimum outer box side, px. Enclosed regions inside letters reach 14 px at 300 DPI;
+    # the smallest checkbox detected is 16 px.
+    min_side: int = 15
     # Maximum outer box side, px.
     max_side: int = 120
-    # Minimum width / height; sample boxes range from 1.0 to 1.25.
-    min_aspect: float = 0.6
-    # Maximum width / height.
-    max_aspect: float = 1.8
+    # Minimum width / height; checkboxes range from 0.94 to 1.27, digit cells measure 0.60.
+    min_aspect: float = 0.7
+    # Maximum width / height; label cells beside amount fields measure 1.77.
+    max_aspect: float = 1.5
     # Minimum inner side / outer side.
     min_interior: float = 0.7
     # Relative size difference; most sensitive parameter, constrained only by sample1.

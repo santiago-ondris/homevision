@@ -109,10 +109,26 @@ def test_border_growth_never_exceeds_the_configured_steps() -> None:
         (Box(1, 1, 19, 50), Box(0, 0, 20, 51)),
         (Box(1, 1, 59, 20), Box(0, 0, 60, 21)),
         (Box(6, 6, 24, 24), Box(0, 0, 30, 30)),
+        (Box(1, 1, 13, 14), Box(0, 0, 14, 15)),
+        (Box(2, 2, 90, 50), Box(0, 0, 92, 52)),
+        (Box(2, 2, 60, 101), Box(0, 0, 62, 103)),
     ],
 )
 def test_shape_filter_rejects_invalid_sides_aspect_or_thick_border(inner: Box, outer: Box) -> None:
     assert not plausible_shape(inner, outer, Params())
+
+
+@pytest.mark.parametrize(
+    "inner, outer",
+    [
+        (Box(1, 1, 15, 15), Box(0, 0, 16, 16)),
+        (Box(2, 2, 55, 43), Box(0, 0, 57, 45)),
+    ],
+)
+def test_shape_filter_accepts_the_smallest_and_the_widest_checkboxes(
+    inner: Box, outer: Box
+) -> None:
+    assert plausible_shape(inner, outer, Params())
 
 
 def test_directional_extension_closes_short_corner_gaps() -> None:
