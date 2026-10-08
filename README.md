@@ -14,12 +14,12 @@ Docker is the only requirement. From the repository root:
 docker compose up --build
 ```
 
-The first build takes a few minutes. The API starts last, so the stack is ready when the `api-1` log shows `"msg":"server starting"`.
+The first build takes a few minutes. The stack is ready once the worker container is reported `Healthy`; the API starts right after it.
 
 - Page: <http://localhost:5173>
 - API: `localhost:8080`, which serves `POST /detect` only.
 
-From a second terminal:
+From a second terminal in the repository root:
 
 ```sh
 curl -s -F "file=@samples/sample2.jpg" localhost:8080/detect
