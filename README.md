@@ -8,13 +8,18 @@ A Go API validates uploads, and a Python worker processes images with OpenCV.
 
 ## Run
 
-Docker is the only requirement.
+Docker is the only requirement. From the repository root:
 
 ```sh
 docker compose up --build
 ```
 
-The API runs at <http://localhost:8080>, and the page runs at <http://localhost:5173>.
+The first build takes a few minutes. The API starts last, so the stack is ready when the `api-1` log shows `"msg":"server starting"`.
+
+- Page: <http://localhost:5173>
+- API: `localhost:8080`, which serves `POST /detect` only.
+
+From a second terminal:
 
 ```sh
 curl -s -F "file=@samples/sample2.jpg" localhost:8080/detect
@@ -64,11 +69,11 @@ va_26_1880.png        22        22       22  100.0%     100.0%      1.00     22/
 total                168       168      168  100.0%     100.0%      0.99   168/168
 ```
 
-The parameters were tuned on the samples, and five of the holdout pages were used to correct them. Only `uscis_i9.png` and `va_26_1880.png` were run after the last change, so those 27 boxes are the result on unseen forms. [WRITEUP.md](WRITEUP.md) has the full account. The command also lists every miss and wrong label.
+The parameters were tuned on the samples, and five of the holdout pages were used to correct them. Only `uscis_i9.png` and `va_26_1880.png` were run after the last change, so those 27 boxes are the result on unseen forms. [WRITEUP.md](WRITEUP.md) has the full account. The output above is abridged: the command also reports the same totals at IoU 0.75 and for unambiguous boxes only, and lists every miss and wrong label.
 
 ## Development
 
-`make lint` and `make test` require Go 1.27, Node.js 24, and an active Python 3.14 virtual environment.
+Running the service needs Docker alone. This section is only for running the linters and tests locally with `make lint` and `make test`, which require Go 1.27, Node.js 24, and an active Python 3.14 virtual environment.
 
 ```sh
 python3.14 -m venv worker/.venv        # Windows: py -3.14 -m venv worker/.venv
