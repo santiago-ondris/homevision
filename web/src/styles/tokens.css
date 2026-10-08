@@ -59,12 +59,15 @@
   --highlight-width: 3px;
   --selected-stroke-width: 3.5px;
   --dash-pattern: 4 3;
+  --issue-dash-pattern: 8 4;
   --sheet-offset: 8px;
   --sheet-shadow: 8px 8px 0 var(--shadow);
   --tab-bar: inset 0 -3px 0 var(--accent);
   --selected-row-bar: inset 3px 0 0 var(--accent);
   --empty-viewer-width: 960px;
   --thumbnail-height: 150px;
+  --dialog-width: 560px;
+  --dialog-max-height: 90dvh;
   --row-height: 36px;
   --row-number-width: 30px;
   --row-state-width: 62px;

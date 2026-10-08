@@ -3,10 +3,11 @@ import { useEffect, useReducer, useRef } from "react";
 import DocumentViewer from "./components/DocumentViewer";
 import Header from "./components/Header";
 import Inspector from "./components/Inspector";
+import PublicFormsDialog from "./components/PublicFormsDialog";
 import type { Sample } from "./components/SamplePicker";
 import { detect, networkErrorMessage } from "./lib/api";
 import { maximumUploadBytes, megabytes, summary } from "./lib/format";
-import { initialState, reducer, type ImagePreview } from "./lib/state";
+import { initialState, reducer, type ImagePreview, type KnownIssue } from "./lib/state";
 import "./styles/base.css";
 
 const copiedDurationMs = 2_000;
@@ -14,6 +15,7 @@ const copiedDurationMs = 2_000;
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const fileInput = useRef<HTMLInputElement>(null);
+  const publicFormsDialog = useRef<HTMLDialogElement>(null);
   const request = useRef<AbortController | null>(null);
   const copyTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const imageUrl = state.image?.url;
@@ -41,9 +43,10 @@ export default function App() {
     return controller;
   }
 
-  async function sendFile(file: File, controller: AbortController) {
+  async function sendFile(file: File, controller: AbortController, knownIssues?: KnownIssue[]) {
     if (controller.signal.aborted) return;
     const image: ImagePreview = {
+      knownIssues,
       url: URL.createObjectURL(file),
       name: file.name,
       width: 0,
@@ -79,7 +82,7 @@ export default function App() {
       }
       const blob = await response.blob();
       const type = sample.filename.endsWith(".jpg") ? "image/jpeg" : "image/png";
-      await sendFile(new File([blob], sample.filename, { type }), controller);
+      await sendFile(new File([blob], sample.filename, { type }), controller, sample.knownIssues);
     } catch {
       if (!controller.signal.aborted) dispatch({ type: "error", message: networkErrorMessage });
     }
@@ -134,6 +137,7 @@ export default function App() {
       }}
     >
       <Header
+        onMoreForms={() => publicFormsDialog.current?.showModal()}
         idle={state.status === "idle"}
         onChoose={openFilePicker}
         onSample={(sample) => {
@@ -156,9 +160,11 @@ export default function App() {
       </div>
       <main className={state.status === "idle" ? "idle-layout" : undefined}>
         <DocumentViewer
+          onMoreForms={() => publicFormsDialog.current?.showModal()}
           idle={state.status === "idle"}
           image={state.image}
           boxes={state.status === "success" ? state.result.boxes : []}
+          knownIssues={state.status === "success" ? (state.image?.knownIssues ?? []) : []}
           loading={state.status === "loading"}
           zoom={state.zoom}
           selection={state.selection}
@@ -189,6 +195,12 @@ export default function App() {
           }}
         />
       </main>
+      <PublicFormsDialog
+        dialog={publicFormsDialog}
+        onChoose={(sample) => {
+          void chooseSample(sample);
+        }}
+      />
     </div>
   );
 }

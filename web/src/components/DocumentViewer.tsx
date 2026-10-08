@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import type { Box } from "../lib/api";
-import type { ImagePreview, Selection, Zoom } from "../lib/state";
+import type { ImagePreview, KnownIssue, Selection, Zoom } from "../lib/state";
 import BoxOverlay, { type BoxInteraction } from "./BoxOverlay";
 import DropArea from "./DropArea";
 import CoordinateTag from "./CoordinateTag";
@@ -12,6 +12,7 @@ interface Props {
   idle: boolean;
   image: ImagePreview | null;
   boxes: Box[];
+  knownIssues: KnownIssue[];
   loading: boolean;
   zoom: Zoom;
   selection: Selection | null;
@@ -20,6 +21,7 @@ interface Props {
   onChoose: () => void;
   onFile: (file: File) => void;
   onSample: (sample: Sample) => void;
+  onMoreForms: () => void;
   onImageLoaded: (image: ImagePreview) => void;
   onImageFailed: (url: string) => void;
 }
@@ -61,7 +63,7 @@ export default function DocumentViewer(props: Props) {
     >
       {!props.idle && (
         <div className="viewer-samples">
-          <SamplePicker onChoose={props.onSample} />
+          <SamplePicker onChoose={props.onSample} onMoreForms={props.onMoreForms} />
         </div>
       )}
       {image && (
@@ -109,6 +111,7 @@ export default function DocumentViewer(props: Props) {
             {image.width > 0 && image.height > 0 && (
               <BoxOverlay
                 boxes={props.boxes}
+                knownIssues={props.knownIssues}
                 width={image.width}
                 height={image.height}
                 interaction={props.interaction}

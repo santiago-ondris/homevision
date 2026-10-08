@@ -1,5 +1,6 @@
 import type { Box } from "../lib/api";
 import { accessibleName } from "../lib/format";
+import type { KnownIssue } from "../lib/state";
 
 export interface BoxInteraction {
   selected: number | null;
@@ -11,14 +12,16 @@ export interface BoxInteraction {
 
 interface Props {
   boxes: Box[];
+  knownIssues: KnownIssue[];
   width: number;
   height: number;
   interaction: BoxInteraction;
 }
 
 const outlineOffset = 2;
+const issuePadding = 10;
 
-export default function BoxOverlay({ boxes, width, height, interaction }: Props) {
+export default function BoxOverlay({ boxes, knownIssues, width, height, interaction }: Props) {
   return (
     <svg
       className="box-overlay"
@@ -53,6 +56,22 @@ export default function BoxOverlay({ boxes, width, height, interaction }: Props)
                 interaction.onSelect(index, "rect");
               }
             }}
+          />
+        );
+      })}
+      {knownIssues.map((issue, index) => {
+        const [x1, y1, x2, y2] = issue.bbox;
+        return (
+          <rect
+            key={`issue-${index}`}
+            data-issue-index={index}
+            x={x1 - issuePadding}
+            y={y1 - issuePadding}
+            width={x2 - x1 + issuePadding * 2}
+            height={y2 - y1 + issuePadding * 2}
+            vectorEffect="non-scaling-stroke"
+            className="issue-marker"
+            aria-hidden="true"
           />
         );
       })}

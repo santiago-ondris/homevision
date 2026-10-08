@@ -6,6 +6,7 @@ import BoxList from "./BoxList";
 import JsonView from "./JsonView";
 import Footer from "./Footer";
 import Readout from "./Readout";
+import KnownIssues from "./KnownIssues";
 
 interface Props {
   state: State;
@@ -60,6 +61,7 @@ export default function Inspector({ state, interaction, onTab, onChoose, onCopy 
   return (
     <aside className="inspector">
       <Readout boxes={state.result.boxes} durationMs={state.result.durationMs} />
+      {!!state.image?.knownIssues?.length && <KnownIssues issues={state.image.knownIssues} />}
       <div
         role="tablist"
         className="inspector-tabs"

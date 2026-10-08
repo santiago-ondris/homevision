@@ -261,6 +261,13 @@ main.idle-layout {
 .box.empty.selected {
   fill: var(--empty-fill);
 }
+.issue-marker {
+  stroke: var(--danger);
+  stroke-width: var(--focus-width);
+  stroke-dasharray: var(--issue-dash-pattern);
+  fill: none;
+  pointer-events: none;
+}
 .coordinate-tag {
   position: absolute;
   pointer-events: none;
@@ -349,6 +356,65 @@ main.idle-layout {
   font: var(--type-data);
   font-variant-numeric: tabular-nums;
 }
+.public-forms {
+  margin-top: var(--space-6);
+}
+.public-forms-caption,
+.public-forms-heading h2 {
+  margin: var(--zero);
+  color: var(--muted);
+  font: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: var(--label-spacing);
+}
+.public-forms-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.public-forms-buttons button,
+.public-forms-dialog button {
+  height: auto;
+  min-height: var(--control-height);
+  max-width: var(--full);
+  border: var(--hairline);
+  border-radius: var(--zero);
+  white-space: normal;
+}
+.public-forms-dialog {
+  width: var(--dialog-width);
+  max-width: calc(var(--full) - 2 * var(--space-4));
+  max-height: var(--dialog-max-height);
+  padding: var(--space-4);
+  border: var(--hairline);
+  border-radius: var(--zero);
+  background: var(--sheet);
+  color: var(--ink);
+  overflow: auto;
+}
+.public-forms-dialog::backdrop {
+  background: var(--shadow);
+}
+.public-forms-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.public-forms-heading button {
+  flex-shrink: 0;
+}
+.public-forms-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.public-forms-list button {
+  padding: var(--space-3);
+  text-align: left;
+}
 .inspector {
   min-width: var(--zero);
   min-height: var(--zero);
@@ -390,6 +456,39 @@ main.idle-layout {
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: var(--label-spacing);
+}
+.known-issues {
+  margin: var(--zero);
+  padding: var(--space-4);
+  border-bottom: var(--hairline);
+  color: var(--ink-soft);
+  font: var(--type-body);
+}
+.known-issues-caption {
+  margin: var(--zero) var(--zero) var(--space-2);
+  color: var(--muted);
+  font: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: var(--label-spacing);
+}
+.known-issues button {
+  display: block;
+  width: var(--full);
+  height: auto;
+  padding: var(--space-2);
+  border: none;
+  border-radius: var(--zero);
+  color: var(--ink-soft);
+  font: var(--type-body);
+  text-align: left;
+}
+.known-issues button:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+.known-issues a {
+  display: inline-block;
+  margin-top: var(--space-2);
 }
 .inspector-tabs {
   display: flex;
@@ -520,11 +619,13 @@ main.idle-layout {
   color: var(--muted);
   font: var(--type-data);
 }
-.page-footer a {
+.page-footer a,
+.known-issues a {
   color: var(--muted);
   text-decoration: underline;
 }
-.page-footer a:hover {
+.page-footer a:hover,
+.known-issues a:hover {
   color: var(--ink);
 }
 .idle-layout .page-footer {

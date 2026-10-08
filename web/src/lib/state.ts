@@ -7,10 +7,16 @@ export interface Selection {
   source: "row" | "rect";
 }
 export interface ImagePreview {
+  knownIssues?: KnownIssue[];
   url: string;
   name: string;
   width: number;
   height: number;
+}
+
+export interface KnownIssue {
+  text: string;
+  bbox: [number, number, number, number];
 }
 
 interface ViewState {
